@@ -1,7 +1,16 @@
 class Menu
 
   attr_reader :titulo, :menu, :calorias
-  #METODO INITIALIZE.
+
+  include Comparable
+  
+  def <=> (other) 
+      
+    @calorias <=> other.calorias
+      
+  end
+  
+       #METODO INITIALIZE.
   def initialize(ti, me, calo)
     @titulo = ti
     @menu = me
@@ -94,4 +103,5 @@ class Edad < Menu
     out << " #{@age[1]}"
     out
   end
+  
 end
